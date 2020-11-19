@@ -1,0 +1,55 @@
+# 日本語のコメントを許容
+Style/AsciiComments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+  # 無効化するファイルの設定
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - 'vendor/**/*'
+    - config/puma.rb
+
+# 空メソッドのスタイル
+Style/EmptyMethod: 
+  EnforcedStyle: expanded
+
+# 1行あたりの文字数
+Layout/LineLength:
+  Max: 100
+
+# メソッドの行数
+Metrics/MethodLength:
+  Max: 20
+
+# ブロックの行数
+Metrics/BlockLength: 
+  Exclude: 
+    - '**/*_test.rb'
+
+# private,protectedのメソッドは一段深くインデントさせるべき
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+# ABC Size Checkを緩くする
+Metrics/AbcSize:
+  Max: 30
+
+# classes/modulesを書くときはnestedじゃなくてコンパクトにする
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+# シンボル配列は[:symbol_a, :symbol_b]の書き方で書く
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+# &&とandの出しわけ
+Style/AndOr:
+  Enabled: false
+
+# unless
+Style/GuardClause: 
+  Enabled: false
